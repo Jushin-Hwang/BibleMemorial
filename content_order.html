@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="kr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta property="og:title" content="유스워십 성경암송게임" />
+    <meta property="og:description" content="성경을 게임하며 암송하라!" />
+    <meta property="og:image" content="./assets/images/img_meta_thumb.jpg" />
+    <meta property="og:image:width" content="972" />
+    <meta property="og:image:height" content="511" />
+    <title>유스워십 성경암송게임</title>
+
+    <!-- 기본 셋팅 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+    <script src="assets/js/library/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/library/jquery-ui.min.js"></script>
+    <script src="assets/json/type_order.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="container" class="order_container">
+            <div class="inner">
+                <div class="title_header">
+                    <h2 class="tit" id="qPyun"></h2>
+                    <!-- header 버튼 영역 -->
+                    <ul class="btn_header_area">
+                        <li class="">
+                            <button class="btn_page_prev" onclick="location.href='index.html'">뒤로</button>
+                        </li>
+                    </ul>
+                </div><!-- //title_header -->
+
+                <ul class="paging_area type_2" id="qIndex">
+                    <li class="on"></li>
+                    <li></li>
+                </ul>
+
+                <!-- 성경구절 영역 / 카운트 -->
+                <div class="preparation_cont" id="textDiv">
+                    <div class="biblical_verse_area">
+                        <span class="biblical_verse_txt" id="qTitle">창세기 1장 1절</span>
+                        <p class="biblical_verse" id="qAnswer">태초에 하나님이 천지를 창조하시니라</p>
+                    </div>
+                    <div class="timer_box" id="timerDiv">
+                        <div class="base-timer">
+                            <div class="base-timer">
+                                <div class="timer_count">
+                                    <svg class="moving-circle" width="100%" height="100%" stroke-width="10" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="#3f68c0" />
+                                        </g>
+                                    </svg>
+                                    <span class="timer_num" id="timerSec">5</span><span class="sr_only">초 후 문제가 출제됩니다.</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 성경구절 영역 / 빈칸채우기 -->
+                <div class="blank_test_cont" id="contentDiv" style="display: none">
+                    <div class="info_txt_area">
+                        <p class="info_txt">빈 칸에 맞는 단어를 순서대로 선택해 주세요</p>
+                    </div>
+                    <div class="quiz_blank_area">
+                        <p class="quiz_blank_info">성경구절</p>
+                        <div class="word_area" id="beforeWordArea">
+
+                            <!--
+							.blank_shape: 기본, 회색
+							.blank_shape.on: 활성화, 흰색
+							.blank_shape.focus: 포커스 되어 있는 상태, 핑크 선
+							.blank_shape.done: 올바르게 들어가있는 상태, 노란색
+							.blank_shape.fale: 틀림, 글씨 핑크
+							.blank_shape.error: 채점시 틀림, 글씨 핑크
+							.blank_shape.empty: 정답영역 빈칸
+							-->
+
+                        </div>
+                    </div>
+
+                    <ol class="line_num_list">
+                    </ol>
+
+                    <!-- 문제들 -->
+                    <div class="blank_test_bottom">
+                        <div class="answer_line_area">
+                            <ul class="btn_bottom_list">
+                                <li class="btn_bottom_item item_02">
+                                    <button class="btn_delete" onclick="javascript:erase();">
+                                        <img src="./assets/images/btn_delete_v1.png" alt="지우기" class="">
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- //blank_test_bottom -->
+                </div><!-- //blank_test_cont -->
+
+
+				<!-- 정답체크 // 성철형제님, 이 영역 그대로 살려주세요-->
+                <div class="check_test_cont" style="display:none;">
+                    <div class="biblical_verse_area">
+                        <span class="biblical_verse_txt" id="answerTitle"></span>
+                        <p class="biblical_verse" id="answerText"></p>
+                    </div>
+                    <div class="right_answer_area">
+                        <div class="word_area" id="afterWordArea">
+                        </div>
+                    </div>
+                    <div class="modal_wrap" style="display: none;">
+                    	<div class="modal_cont">
+                            <img src="./assets/images/img_modal_right_answer.png" alt="정답입니다." class="img_right">
+                            <img src="./assets/images/img_modal_wrong.png" alt="정답이 아닙니다." class="img_wrong">
+                    	</div>
+                    </div>
+
+                    <ul class="btn_bottom_list">
+                        <li class="btn_bottom_item item_01">
+                            <button class="btn_again" onclick="javascript:location.reload();">
+                                <img src="./assets/images/btn_again_v1.png" alt="다시풀기" class="">
+                            </button>
+                        </li>
+                        <li class="btn_bottom_item item_02" id="nextQuizBtn" >
+                            <button class="btn_delete" onclick="javascript:nextBtn();">
+                                <img src="./assets/images/btn_next_v1.png" alt="다음구절로이동" class="">
+                            </button>
+                        </li>
+                        <li class="btn_bottom_item item_02" id="nextPyunBtn" style="display:none;">
+                            <button class="btn_delete" onclick="javascript:nextPyun();">
+                                <img src="./assets/images/btn_chapter_v1.png" alt="다음편수로이동" class="">
+                            </button>
+                        </li>
+                    </ul>
+                </div><!-- //check_test_cont -->
+
+                <!-- 정답체크 -->
+                <!-- <div class="check_test_cont" style="display: none;">
+
+                    <ul class="btn_bottom_list">
+                        <li class="btn_bottom_item item_01">
+                            <button class="btn_again" onclick="javascript:location.reload();">
+                                <img src="./assets/images/btn_again_v1.png" alt="다시풀기" class="">
+                            </button>
+                        </li>
+                        <li class="btn_bottom_item item_02" id="nextQuizBtn">
+                            <button class="btn_delete" onclick="javascript:nextBtn();">
+                                <img src="./assets/images/btn_next_v1.png" alt="다음구절로이동" class="">
+                            </button>
+                        </li>
+                        <li class="btn_bottom_item item_02" id="nextPyunBtn" style="display:none;">
+                            <button class="btn_delete" onclick="javascript:nextPyun();">
+                                <img src="./assets/images/btn_next_v1.png" alt="다음편수로이동" class="">
+                            </button>
+                        </li>
+                    </ul>
+                </div> -->
+                <!-- //blank_test_cont -->
+
+
+                <!-- 정답/틀림 모달 -->
+                <div class="modal_wrap" style="display: none;" id="passModal">
+                    <div class="modal_cont">
+                        <img src="./assets/images/img_modal_right_answer.png" alt="정답입니다." class="img_right">
+                    </div>
+                </div>
+
+                <div class="modal_wrap" style="display: none;" id="failModal">
+                    <div class="modal_cont">
+                        <img src="./assets/images/img_modal_wrong.png" alt="정답이 아닙니다." class="img_wrong">
+                    </div>
+                </div>
+
+                <!-- 힌트 모달 -->
+                <div class="modal_wrap" style="display: none;" id="hintModal">
+                    <div class="modal_cont hint_area">
+                        <div class="tit">힌트</div>
+                        <p class="txt">한 단어 확인하기<br>아이템 1개 사용</p>
+                        <ul class="btn_hint_list">
+                            <li class="btn_hint_item">
+                                <button class="btn_no" onclick="javascript:closeModal();">아니요</button>
+                            </li>
+                            <li class="btn_hint_item">
+                                <button class="btn_yes" onclick="javascript:checkHint();">네</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 힌트 결과 -->
+                <div class="modal_wrap" style="display: none;" id="hintWordModal">
+                    <div class="modal_cont hint_area">
+                        <div class="tit">힌트</div>
+                        <p class="txt" id="hintWordModalP"></p>
+                        <ul class="btn_hint_list">
+                            <li class="btn_hint_item">
+                                <button class="btn_no" onclick="javascript:closeModal();">확인</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div><!-- //inner -->
+        </div>
+    </div>
+    <script src="assets/js/commons.js"></script>
+    <script src="assets/js/content_order.js"></script>
+</body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126963275-35"></script>
+<script>
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-126963275-35');
+
+	//gtag 클릭 이벤트 리스너 등록
+	var trackClickLink = function(category, label) {
+		gtag('event', 'click', {
+			'event_category' : category,
+			'event_label' : label
+		});
+	}
+
+</script>
+</html>

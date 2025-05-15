@@ -1,0 +1,1469 @@
+@charset "utf-8";
+
+/* common */
+
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sr_only {
+    overflow: hidden;
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    clip: rect(1px 1px 1px 1px);
+    /* IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* main_index */
+.main_container {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #3f68c0 50%, #aac8fc 50%);
+}
+
+.main_container .inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+h1.game_logo {
+    width: 58.7vw;
+    margin: 0 auto;
+    font-size: 4.8vw;
+    text-align: center;
+    color: #fff;
+}
+
+.game_list {
+    width: 66.1vw;
+    margin: 0 auto;
+}
+
+.game_item + .game_item {
+    margin-top: 6.4vw;
+}
+
+/* question_container */
+.question_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #3f68c0;
+}
+
+.question_container .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    padding-top: 9.9vw;
+    box-sizing: border-box;
+}
+
+.question_container .title_header {
+    position: relative;
+    height: 8.5vw;
+}
+
+.question_container .tit {
+    line-height: 8.5vw;
+    color: #fff;
+    font-size: 5.3vw;
+    text-align: center;
+    font-weight: 300
+}
+
+.question_container .btn_page_prev,
+.question_container .btn_page_next {
+    position: absolute;
+    top: 0;
+    width: 8.5vw;
+    height: 8.5vw;
+    background: url(../images/btn_page_prev_white.png) no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+}
+
+.question_container .btn_page_prev {
+    left: 2.4vw;
+}
+
+.question_container .btn_page_next {
+    right: 2.4vw;
+    transform: rotate(0.5turn);
+}
+
+.question_category {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 77.3%;
+    margin: 6.4vw auto 4vw;
+}
+
+.question_item {
+    width: 13.3vw;
+    height: 13.3vw;
+    margin-bottom: 4vw;
+    background: #D2D1D1 url(../images/icon_off_bookmark.png) no-repeat top right 1.6vw;
+    background-size: 2.4vw 3.2vw;
+    border-radius: 2.1vw;
+    box-shadow: 0px 3px #7892CB;
+    font-size: 5.9vw;
+    text-align: center;
+}
+
+.question_item > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #7892CB;
+}
+
+.question_item.on {
+    background: #FFB507 url(../images/icon_on_start.png) no-repeat center top 1.3vw;
+    background-size: 3.5vw 3.2vw;
+    box-shadow: 0px 3px #FF8B07;
+}
+
+.question_item.on > a {
+    color: #fff;
+}
+
+.question_item:nth-of-type(5n) {
+    margin-right: 0;
+}
+
+.question_item > a > span {
+    vertical-align: -0.65em
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 0 !important;
+}
+
+.paging_area {
+    text-align: center;
+}
+
+/* swiper-pagination-bullet와 같은 색상이라도 우선순위 때문에 따로 줘야함  */
+.paging_area li {
+    background: #A3A3A3;
+}
+
+.paging_area li + li {
+    margin-left: 2.7vw;
+}
+
+.paging_area li,
+.swiper-pagination-bullet {
+    display: inline-block !important;
+    width: 1.6vw !important;
+    height: 1.6vw !important;
+    border-radius: 50% !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet {
+    background: #A3A3A3 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #FFB507 !important;
+}
+
+.paging_area.type_2 li.on {
+    background: #F9E464;
+}
+
+/* order_container, blank_container common   */
+.order_container {
+    width: 100%;
+    height: 100%;
+    background: #3f68c0;
+}
+
+.blank_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #aac8fc;
+}
+
+.order_container > .inner,
+.blank_container > .inner {
+    width: 100%;
+    height: 100%;
+    /* padding-top: 9.9vw; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.order_container .title_header,
+.blank_container .title_header {
+    position: relative;
+    height: 8.5vw;
+    margin-top: 8vw;
+    margin-bottom: 2vh;
+}
+
+.order_container .tit,
+.blank_container .tit {
+    line-height: 8.5vw;
+    font-size: 5.3vw;
+    text-align: center;
+    font-weight: 500
+}
+
+.order_container .tit {
+    color: #fff;
+}
+
+.blank_container .tit {
+    color: #1C69E1;
+}
+
+.title_header .btn_page_prev {
+    position: absolute;
+    top: 0;
+    width: 8.5vw;
+    height: 8.5vw;
+    background-size: contain;
+    text-indent: -9999px;
+}
+
+.title_header .btn_page_prev {
+    left: 2.4vw;
+}
+
+.order_container .title_header .btn_page_prev {
+    background: url(../images/btn_page_prev_white.png) no-repeat;
+    background-size: contain;
+}
+
+.blank_container .title_header .btn_page_prev {
+    background: url(../images/btn_page_prev_blue.png) no-repeat;
+    background-size: contain;
+}
+
+/* .order_container .btn_page_next {
+	right: 2.4vw;
+	transform: rotate(0.5turn);
+}
+ */
+
+/* 순서맞추기 카운트 영역 */
+.preparation_count {
+    display: none;
+}
+
+.biblical_verse_area {
+    margin-top: 4.3vw;
+    text-align: center;
+    font-size: 4.3vw;
+    line-height: 6.4vw;
+}
+
+.order_container .biblical_verse_area {
+    color: #fff;
+}
+
+.blank_container .biblical_verse_area {
+    color: #1C69E1;
+}
+
+.biblical_verse_area > span {
+    font-weight: 500;
+}
+
+.biblical_verse {
+    width: 79.4vw;
+    margin: 2.9vw auto 0;
+    font-weight: 300;
+    word-break: keep-all;
+    text-align: center;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+.biblical_verse_txt.chek_txt {
+    font-size: 3.7vw;
+    font-weight: 300;
+}
+
+.biblical_verse.chek_txt {
+    width: 79.4vw;
+    height: 23.7vw;
+    margin: 2.4vw auto 4vw;
+    font-size: 3.2vw;
+    word-break: keep-all;
+    text-align: center;
+    line-height: 4.8vw;
+    overflow: hidden;
+}
+
+.timer_box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 54%;
+}
+
+.order_container .timer_box {
+    background: #AAC8FC;
+}
+
+.blank_container .timer_box {
+    background: #3F68C1;
+}
+
+.timer_count {
+    position: relative;
+    width: 68.5vw;
+    height: 68.5vw;
+    transform: translate(0%, 20%);
+    margin: 0 auto;
+    /* border: 4vw solid #fff; */
+    border-radius: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 60.5vw;
+}
+
+.timer_num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18.9vw;
+    color: #0F0F0F;
+}
+
+/* 타이머 애니메이션 */
+
+.moving-circle {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    transform: rotate(270deg);
+    animation: ani 5s linear;
+    stroke-linecap: round;
+}
+
+@keyframes ani {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dashoffset: 250;
+    }
+
+    100% {
+        stroke-dashoffset: 500;
+    }
+}
+
+/*
+.round {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	border: 10px solid white;
+	border-style: inset;
+	border-radius: 50%;
+}
+ */
+/* 순서맞추기 본페이지 */
+.talent_box {
+    display: none;
+    position: absolute;
+    top: -4.8vw;
+    right: 2.4vw;
+    width: 13.3vw;
+    height: 13.3vw;
+    background: url(../images/img_talent.png) no-repeat bottom left;
+    background-size: 9.6vw 10vw;
+}
+
+.talent {
+    position: absolute;
+    bottom: 0.9vw;
+    left: 6.3vw;
+    width: 5.2vw;
+    height: 5.2vw;
+    border: 1vw solid #83baac;
+    border-radius: 50%;
+    background: #fff;
+    box-sizing: border-box;
+    font-size: 2.7vw;
+    text-align: center;
+    line-height: 3.2vw;
+}
+
+.info_txt_area {
+    margin-top: 2vh;
+    font-size: 3.7vw;
+    text-align: center;
+    line-height: 6.4vw;
+}
+
+.order_container .info_txt_area {
+    color: #fff;
+}
+
+.blank_container .info_txt_area {
+    color: #1C69E1;
+}
+
+.quiz_blank_area {
+    width: 89.3vw;
+    height: 86.1vw;
+    margin: 4% auto 0;
+    padding-top: 11vw;
+    box-sizing: border-box;
+}
+
+.right_answer_area {
+    width: 89.3vw;
+    height: 76.1vw;
+    margin: 4% auto 0;
+    padding-top: 11vw;
+    box-sizing: border-box;
+}
+
+.order_container .blank_test_cont .quiz_blank_area {
+    background: url(../images/img_blank.png) no-repeat center;
+    background-size: contain;
+}
+
+.order_container .check_test_cont .right_answer_area {
+    background: url(../images/img_right_answer.png) no-repeat center;
+    background-size: contain;
+}
+
+.blank_container .quiz_blank_area {
+    background: url(../images/img_order.png) no-repeat center;
+    background-size: contain;
+}
+
+.blank_container .check_test_cont .right_answer_area {
+    background: url(../images/img_right_answer_order.png) no-repeat center;
+    background-size: contain;
+}
+
+.quiz_word_area {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 24.5%;
+    background: #AAC8FC
+}
+
+
+.quiz_blank_info {
+    font-size: 4.2vw;
+    font-weight: 700;
+    line-height: 6.4vw;
+    text-align: center;
+}
+
+
+.blank_test_cont .word_area {
+    width: 95%;
+    height: 88%;
+    margin: 1.5vw auto 0;
+    padding: 4.4vw 0vw 4.4vw 2.6vw;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+
+.check_test_cont .word_area {
+    width: 95%;
+    height: 96%;
+    margin: 0 auto 1.5vw;
+    padding: 2.4vw 0vw 4.4vw 2.6vw;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.word_area .line_flex {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/* .blank_shape: 기본, 회색
+.blank_shape.on: 활성화, 흰색
+.blank_shape.focus: 포커스 되어 있는 상태, 핑크 선
+.blank_shape.done: 올바르게 들어가있는 상태, 노란색
+.blank_shape.fale: 틀림, 글씨 핑크
+.blank_shape.error: 채점시 틀림, 글씨 핑크
+.blank_shape.empty: 정답영역 빈칸*/
+
+.blank_shape {
+    width: 18.7vw;
+    height: 7.4vw;
+    margin: 0 0.6vw 2.6vw;
+    background: #D5D5D5;
+    border-radius: 1.1vw;
+    box-shadow: 0px -0.8vw rgb(0 0 0 / 29%) inset;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 6.6vw;
+    font-size: 4.1vw;
+    letter-spacing: -0.01em;
+}
+
+.blank_shape.on {
+    background: #fff;
+}
+
+.blank_shape.focus {
+    background: #fff;
+    border: 0.5vw solid #F16498;
+    box-shadow: none;
+}
+
+.blank_shape.done {
+    background: #FFF69F;
+}
+
+.blank_shape.fale {
+    background: #fff;
+    color: #F16498;
+}
+
+.blank_shape.error {
+    color: #F16498;
+}
+
+.blank_shape.empty {
+    background: none;
+    box-shadow: none;
+}
+
+.word {
+    height: 7.5vw;
+    margin: 0 0.6vw 2.6vw;
+    line-height: 7.5vw;
+    font-size: 4.1vw;
+    letter-spacing: -0.01em;
+}
+
+.line_num_list {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    margin-top: 3.7vw;
+    margin-right: 5.3vw;
+}
+
+.line_num_item {
+    width: 3.7vw;
+    height: 3.7vw;
+    border: 1px solid #a3a3a3;
+    border-radius: 25%;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 3.2vw;
+    color: #a3a3a3;
+    font-size: 2.6vw;
+}
+
+.order_container .line_num_item.on {
+    border: 1px solid #f9e464;
+    color: #f9e464;
+}
+
+.blank_container .line_num_item.on {
+    border: 1px solid #1C69E1;
+    color: #1C69E1;
+}
+
+
+.line_num_item + .line_num_item {
+    margin-left: 1.3vw;
+}
+
+.blank_test_bottom {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 24.5%;
+    box-sizing: border-box;
+}
+
+.order_container .blank_test_bottom {
+    background: #AAC8FC;
+}
+
+.blank_container .blank_test_bottom {
+    background: #3F68C1;
+}
+
+
+.answer_line {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 89.3vw;
+    font-weight: 500;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.answer_line_area {
+    position: relative;
+    height: 70%;
+}
+
+.answer_line_area .blank_shape {
+    cursor: pointer;
+}
+
+.answer_line_area .blank_shape.empty {
+    cursor: default;
+}
+
+.blank_test_cont .btn_bottom_list .btn_bottom_item {
+    display: inline-block;
+    width: 21.1vw;
+    height: 8vw;
+}
+
+.blank_test_cont .btn_bottom_list {
+    overflow: hidden;
+}
+
+.blank_test_cont .btn_bottom_list .btn_bottom_item.item_01 {
+    float: left;
+}
+
+.blank_test_cont .btn_bottom_list .btn_bottom_item.item_02 {
+    float: right;
+}
+
+
+.blank_container .word_area {
+    padding: 0;
+}
+
+.letter_shape {
+    position: relative;
+    z-index: 2;
+    width: 8.5vw;
+    height: 8.5vw;
+    margin: 0 0.6vw 2.6vw;
+    background: #D5D5D5;
+    border-radius: 1.1vw;
+    box-shadow: 0px -0.5vw rgb(0 0 0 / 29%) inset;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 8vw;
+    font-size: 4.1vw;
+}
+
+.answer_line_area .letter_shape {
+        cursor: pointer;
+}
+
+.answer_line_area .letter_shape.empty {
+    cursor: default;
+}
+
+
+
+.letter_shape.on {
+    background: #fff;
+}
+
+.letter_shape.focus {
+    background: #fff;
+    border: 0.5vw solid #F16498;
+    box-shadow: none;
+    line-height: 6.4vw;
+}
+
+.letter_shape.done {
+    background: #FFB507;
+}
+
+.letter_shape.fale {
+    background: #fff;
+    color: #F16498;
+}
+
+.letter_shape.error {
+    color: #F16498;
+}
+
+.letter_shape.empty {
+    background: none;
+    box-shadow: none;
+}
+
+.blank_container .word {
+    line-height: 8vw;
+}
+
+.letter_finish {
+    position: relative;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+}
+
+.letter_bg {
+    width: 105%;
+    height: 100%;
+    position: absolute;
+    background: rgba(255, 181, 7, 0.2);
+    top: -1.3vw;
+    left: -0.5vw;
+    border-radius: 1.1vw;
+}
+
+/* 정답체크 */
+.icon_emoticon {
+    display: inline-block;
+    width: 6.9vw;
+    height: 6.9vw;
+    vertical-align: -0.4rem;
+    margin-right: 0.5vw;
+}
+
+.icon_01 {
+    background: url(../images/img_emoticon_01.png) no-repeat;
+    background-size: contain;
+}
+
+.icon_02 {
+    background: url(../images/img_emoticon_02.png) no-repeat;
+    background-size: contain;
+}
+
+.icon_03 {
+    background: url(../images/img_emoticon_03.png) no-repeat;
+    background-size: contain;
+}
+
+.icon_04 {
+    background: url(../images/img_emoticon_04.png) no-repeat;
+    background-size: contain;
+}
+
+.check_test_cont .biblical_verse {
+    width: 79.4vw;
+    height: 23.7vw;
+    margin: 2.4vw auto 3vw;
+    font-size: 3.2vw;
+    word-break: keep-all;
+    text-align: center;
+    line-height: 4.8vw;
+    overflow: hidden;
+}
+
+
+
+.check_test_cont .btn_bottom_list {
+    margin: 4.5vw auto 0;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    width: 89.3vw;
+}
+
+.check_test_cont .btn_bottom_list .btn_bottom_item {
+    /* display: inline-block; */
+    width: 29vw;
+    height: 8vw;
+}
+
+.check_test_cont .btn_bottom_list .btn_bottom_item:nth-child(1) {
+    float: left;
+}
+
+.check_test_cont .btn_bottom_list .btn_bottom_item:nth-child(2),
+.check_test_cont .btn_bottom_list .btn_bottom_item:nth-child(3) {
+    float: right;
+}
+
+/* 모달영역 */
+.modal_wrap {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* 모달영역 > 정답/틀림 */
+.modal_cont {
+    overflow: hidden;
+    width: 66.6%;
+    /* height: 46.9vw; */
+    /* padding: 2em; */
+    border-radius: 1em;
+    background: white;
+    box-sizing: border-box;
+}
+
+
+/* 모달영역 > 힌트 */
+.modal_cont.hint_area .tit {
+    padding: 1.6vw 0;
+    background: #FF8080;
+    color: #000;
+    font-weight: 500;
+    font-size: 4.2vw;
+}
+
+.modal_cont.hint_area .txt {
+    margin-top: 5vw;
+    margin-bottom: 5.6vw;
+    font-size: 4.2vw;
+    line-height: 6.4vw;
+    text-align: center;
+}
+
+.btn_hint_list {
+    margin-bottom: 5vw;
+    text-align: center;
+}
+
+.btn_hint_item {
+    display: inline-block;
+    width: 32%;
+    padding: 1vw 0;
+    border-radius: 0.5rem;
+    background: #D2D1D1;
+}
+
+.btn_hint_item + .btn_hint_item {
+    margin-left: 8vw;
+}
+
+.btn_hint_item button {
+    width: 100%;
+    height: 100%;
+    padding: 1vw 0;
+    font-weight: 500;
+    font-size: 4.2vw;
+}
+
+
+@media screen and (max-height:567px) {
+
+    /* index */
+    h1.game_logo {
+        width: 48.7vw
+    }
+
+    .game_list {
+        width: 56.1vw;
+    }
+
+    .game_item + .game_item {
+        margin-top: 5.4vw;
+    }
+
+    .order_container .title_header,
+    .blank_container .title_header {
+        margin-top: 3.5vw;
+    }
+
+    /* 문제선택페이지 */
+    .question_item.on {
+        background: #FFB507 url(../images/icon_on_start.png) no-repeat center top 1vw;
+        background-size: 3.2vw 3.2vw;
+    }
+
+    .question_item {
+        /* display: inline-block; */
+        width: 11vw;
+        height: 11vw;
+        margin-right: 2.7vw;
+        background: #D2D1D1 url(../images/icon_off_bookmark.png) no-repeat top right 1.6vw;
+        background-size: 2.4vw 3.2vw;
+        border-radius: 2.1vw;
+        box-shadow: 0px 3px #7892CB;
+        margin-bottom: 3.5vw;
+        font-size: 5.4vw;
+        text-align: center;
+    }
+
+
+    .timer_count {
+        position: relative;
+        width: 58.5vw;
+        height: 58.5vw;
+        transform: translate(0%, 20%);
+        margin: 0 auto;
+        /* border: 4vw solid #fff; */
+        border-radius: 50%;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 60.5vw;
+    }
+
+    .info_txt_area {
+        margin-top: 1.5vh;
+        line-height: 5.4vw;
+    }
+
+    .blank_container .quiz_blank_area {
+        padding-top: 26px;
+    }
+
+    .quiz_blank_area {
+        width: 86.3vw;
+        height: 83.1vw;
+        margin: 2% auto 0;
+    }
+
+
+
+    .quiz_blank_info {
+        line-height: 5.4vw;
+    }
+
+    .answer_line_area {
+        height: 82%
+    }
+
+    .blank_shape {
+        margin: 0 0.6vw 2vw;
+    }
+
+    .blank_test_cont .word_area {
+        padding: 2.4vw 0vw 4.4vw 1.6vw;
+    }
+
+    .check_test_cont .word_area {
+        padding: 1vw 0vw 4.4vw 1.6vw;
+    }
+
+    .line_num_list {
+        margin-top: 1.5vw;
+        margin-right: 7.3vw;
+    }
+
+    .blank_test_bottom {
+        height: 20%;
+    }
+
+    .blank_test_cont .btn_bottom_list .btn_bottom_item {
+        width: 20.1vw;
+    }
+
+    .blank_shape {
+        width: 17.7vw;
+        height: 6.4vw;
+        line-height: 5.5vw;
+        font-size: 3.8vw;
+    }
+
+    .word {
+        height: 6.4vw;
+        line-height: 5.8vw;
+        font-size: 3.8vw;
+    }
+
+    .check_test_cont .btn_bottom_list {
+        /* bottom: 1%; */
+        margin: 1vw auto 0;
+    }
+
+    /* 빈칸맞추기 */
+
+    .letter_shape {
+        width: 7vw;
+        height: 7vw;
+        margin: 0 0.6vw 2vw;
+        line-height: 6.5vw;
+        font-size: 3.5vw;
+    }
+}
+
+
+ @media screen and (min-height: 568px) and (max-height:735px) { 
+	
+
+	.order_container .title_header, 
+	.blank_container .title_header {
+		margin-top: 6.9vw
+	}
+	
+	.line_num_list {
+    	margin-top: 2.7vw;
+	}
+
+ 	.blank_test_bottom {
+		height: 21%;
+ 	}
+ 	
+ 	.quiz_blank_area {
+    	margin: 3% auto 0;
+ 	}
+ }
+
+@media screen and (min-width: 410px) and (max-width: 420px) and (min-height: 568px) and (max-height:765px) {
+
+
+    .order_container .title_header,
+    .blank_container .title_header {
+        margin-top: 6.9vw
+    }
+
+    .question_item {
+        width: 13vw;
+        height: 13vw;
+    }
+
+    .blank_test_bottom {
+        height: 20.5%;
+    }
+
+    .quiz_blank_area {
+        margin: 2% auto 0;
+    }
+
+    .answer_line_area {
+        height: 78%;
+    }
+
+
+    .line_num_list {
+        margin-top: 2vw;
+    }
+
+}
+
+@media screen and (min-width: 750px) {
+
+    html,
+    body {
+        background: #f4f6f8 !important;
+    }
+
+    .main_container {
+        display: block;
+    }
+
+    .main_container .inner {
+        display: block;
+    }
+
+    .wrap {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 375px;
+        height: 667px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 5px 0 rgb(0 0 0 / 7%);
+        overflow: hidden;
+    }
+
+    /* 메인 */
+    h1.game_logo {
+        width: 220.5px;
+        padding-top: 43px;
+        font-size: 18px;
+    }
+
+    h1.game_logo > img {
+        display: block;
+        width: 220.5px;
+        font-size: 18px;
+    }
+
+    .game_list {
+        width: 248px;
+    }
+
+    .game_item + .game_item {
+        margin-top: 22px;
+    }
+
+    /* 문제선택 페이지 */
+
+    .question_container .tit {
+        font-size: 20px;
+        line-height: 29px;
+    }
+
+    .title_header .btn_page_prev {
+        left: 11px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .question_container .inner {
+        padding-top: 35px;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top: 0%;
+        left: 0%;
+        -webkit-transform: translate(0%, 0%);
+        -moz-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+        box-sizing: border-box;
+    }
+
+    .question_container .title_header {
+        height: 32px;
+    }
+
+    .question_category {
+        margin: 24px auto 20px;
+    }
+
+    .question_item {
+        width: 50px;
+        height: 50px;
+        /* margin-right: 2.7vw; */
+        background: #D2D1D1 url(../images/icon_off_bookmark.png) no-repeat top right 6px;
+        background-size: 9px 12px;
+        border-radius: 7px;
+        ;
+        box-shadow: 0px 3px #7892CB;
+        margin-bottom: 15px;
+        font-size: 22px;
+        text-align: center;
+    }
+
+
+    .question_item.on {
+        background: #FFB507 url(../images/icon_on_start.png) no-repeat center top 5px;
+        background-size: 13px 12px;
+
+    }
+
+    .question_item > a > span {
+        vertical-align: -0.78em;
+    }
+
+    .paging_area li,
+    .swiper-pagination-bullet {
+        width: 6px !important;
+        height: 6px !important;
+
+    }
+
+    /* 순서맞추기, 빈칸채우기 */
+    .order_container .title_header,
+    .blank_container .title_header {
+        margin-top: 35px;
+        margin-bottom: 17px;
+        height: 32px;
+    }
+
+    .order_container .tit,
+    .blank_container .tit {
+        font-size: 20px;
+        line-height: 29px;
+    }
+
+    .biblical_verse_area {
+        margin-top: 17px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .biblical_verse {
+        width: 260px;
+        margin: 9px auto 0;
+        font-weight: 300;
+
+    }
+
+    .timer_count {
+        width: 257px;
+        height: 257px;
+        transform: translate(0%, 20%);
+        margin: 0 auto;
+        /* border: 4vw solid #fff; */
+        border-radius: 50%;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 257px;
+    }
+
+    .timer_num {
+        font-size: 72px;
+    }
+
+    .talent_box {
+        display: none;
+        position: absolute;
+        top: -18px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        background: url(../images/img_talent.png) no-repeat bottom left;
+        background-size: 36px 37.5px;
+    }
+
+    .talent {
+        bottom: 3.5px;
+        left: 23.62px;
+        width: 19px;
+        height: 19px;
+        border: 2px solid #83baac;
+        border-radius: 50%;
+        background: #fff;
+        box-sizing: border-box;
+        font-size: 11px;
+        text-align: center;
+        line-height: 15px;
+    }
+
+    .paging_area li + li {
+        margin-left: 10px;
+    }
+
+    .info_txt_area {
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .order_container .blank_test_cont .quiz_blank_area {
+        padding-top: 37px;
+    }
+
+    .quiz_blank_area {
+        width: 335px;
+        height: 327px;
+        padding-top: 27px;
+    }
+
+    .quiz_blank_info {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .blank_test_cont .word_area {
+        height: 80%;
+        margin: 8px auto 0;
+        padding: 13px 0 12px;
+        padding: 17px 0vw 0 12px;
+    }
+
+
+
+    .blank_test_cont .word_area {
+        height: 80%;
+        margin: 8px auto 0;
+        padding: 13px 0 12px;
+        padding: 12px 0vw 0 5px;
+    }
+
+    .blank_shape {
+        width: 74px;
+        height: 30px;
+        margin: 0 2px 10px;
+        border-radius: 4px;
+        box-shadow: 0px -3px rgb(0 0 0 / 29%) inset;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .blank_shape.focus {
+        border: 2px solid #F16498
+    }
+
+    .answer_line_area .blank_shape {
+        margin-bottom: 13px;
+        cursor: pointer;
+    }
+
+    .answer_line_area .blank_shape.empty {
+        cursor: default;
+    }
+
+    .word {
+        height: 27px;
+        line-height: 24px;
+        font-size: 16px;
+        margin: 0 2px 10px;
+    }
+
+    .line_num_list {
+        margin-top: 14px;
+        margin-right: 20px;
+    }
+
+    .line_num_item {
+        width: 14px;
+        height: 14px;
+        line-height: 12px;
+        font-size: 10px;
+
+    }
+
+    .line_num_item + .line_num_item {
+        margin-left: 5px;
+    }
+
+    .answer_line {
+        width: 335px;
+    }
+
+    .blank_test_cont .btn_bottom_list .btn_bottom_item {
+        display: inline-block;
+        width: 79px;
+        height: 30px;
+    }
+
+    /* 정답체크하는 영역 */
+    .check_test_cont .biblical_verse {
+        width: 79.4%;
+        height: 75px;
+        margin: 9px auto 33px;
+        font-size: 12px;
+        line-height: 18px;
+
+    }
+
+    .order_container .check_test_cont .right_answer_area {
+        padding: 50px 10px 20px 20px;
+    }
+
+    .right_answer_area {
+        width: 335px;
+        height: 298px;
+        margin: 0 auto;
+        padding: 40px 10px 20px 10px;
+    }
+
+    .check_test_cont .word_area {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .check_test_cont .btn_bottom_list .btn_bottom_item {
+        WIDTH: 106.5px;
+        height: 29px;
+    }
+
+    .check_test_cont .btn_bottom_list {
+        width: 335px;
+        height: 33px;
+        margin: 15px auto 0;
+    }
+
+
+    /* 모달영역 > 힌트 */
+    .modal_cont.hint_area .tit {
+        padding: 6px 0;
+        font-size: 16px;
+    }
+
+    .modal_cont.hint_area .txt {
+        margin-top: 19px;
+        margin-bottom: 21px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .btn_hint_list {
+        margin-bottom: 20px;
+    }
+
+    .btn_hint_item {
+        width: 32%;
+        padding: 4px 0;
+    }
+
+    .btn_hint_item + .btn_hint_item {
+        margin-left: 20px;
+    }
+
+    .btn_hint_item button {
+        padding: 0;
+        font-size: 16px;
+    }
+
+    /* 빈칸채우기 */
+    .letter_shape {
+        width: 32px;
+        height: 32px;
+        margin: 0 2.5px 9px;
+        border-radius: 4px;
+        box-shadow: 0px -3px rgb(0 0 0 / 29%) inset;
+        line-height: 29px;
+        font-size: 16px;
+    }
+
+    .answer_line_area .letter_shape {
+        cursor: pointer;
+    }
+
+    .answer_line_area .letter_shape.empty {
+        cursor: default;
+    }
+
+    .blank_container .word {
+        height: 32px;
+        line-height: 28px;
+    }
+
+    .letter_shape.focus {
+        border: 2px solid #F16498;
+
+    }
+
+    .letter_bg {
+        top: -5px;
+        left: -3px;
+        border-radius: 4px;
+    }
+}

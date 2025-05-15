@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+
+/*
+Noto Sans KR 굵기
+thin 100
+light 300
+regular 400
+medium 500
+bold 700
+black 900
+*/
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+	background: #3f68c0;;
+    color: #000;
+	font: normal 15px 'Noto Sans KR', 'Apple SD Gothic Neo', 'Nanum Gothic', '나눔고딕', NanumGothic, '맑은 고딕',
+		'Malgun Gothic', '돋움', Dotum, Helvetica, Sans-serif; 
+	-webkit-text-size-adjust: none;
+	direction: ltr;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	line-height: 1.3;
+}
+
+
+
+body,h1,h2,h3,h4,h5,input,select,textarea,button {
+	font-size: 12px;
+	line-height: 1.5;
+	font-weight: normal;
+}
+
+div, span, p, applet, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, samp, small, strike, sub, sup, tt, var, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ol, ul {
+	display: block;
+    list-style: none;
+    font-size: 0;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/* html5 */
+article, aside, canvas,  details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    display: block;
+}
+
+
+a {
+	text-decoration: none;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	color: #333;
+}
+
+a:link, a:hover, a:active {
+	text-decoration: none;
+}
+
+
+hr,
+legend,
+caption {
+    display: none;
+}
+
+img {
+	width: 100%;
+    border: none;
+    vertical-align: top;
+}
+
+hr {
+    display: none;
+}
+
+address, em  {
+    font-style: normal;
+}
+
+table {
+    margin: 0;
+    padding: 0;
+    word-break: break-all;
+    border-collapse: collapse;
+}
+
+td {
+    font-size: 12px;
+}
+
+caption,
+legend {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+	font: inherit;
+    cursor: pointer;
+}
+
+/* img {width:100%;} */
+
+/* link */
+a {
+    display: block;
+    text-decoration: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+/*아이폰 input영역 color색*/
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #c7c7c7;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #c7c7c7;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #c7c7c7;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #c7c7c7;
+}
+
+/* input영역 font Placeholder color색 */
+::placeholder {
+    color: #c7c7c7 !important;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #c7c7c7 !important;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #c7c7c7 !important;
+}
+
+/*아이폰 input 초기화*/
+input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}

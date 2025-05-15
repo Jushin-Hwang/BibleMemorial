@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="kr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta property="og:title" content="톨레레게 성경암송게임" />
+    <meta property="og:description" content="성경을 게임하며 암송하라!" />
+    <meta property="og:image" content="./assets/images/img_meta_thumb.jpg" />
+    <meta property="og:image:width" content="972" />
+    <meta property="og:image:height" content="511" />
+    <title>톨레레게 성경암송게임</title>
+
+
+  <!-- 기본 셋팅 -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+  <script src="assets/js/library/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/library/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="assets/plugins/swiper/swiper-bundle.min.css" />
+  <script src="assets/plugins/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="question_container">
+      <div class="inner">
+        <div class="title_header">
+          <h2 class="tit">문제선택</h2>
+          <!-- header 버튼 영역 -->
+          <ul class="btn_header_area">
+            <li class="">
+              <button class="btn_page_prev" class="" onclick="location.href='index.html'">뒤로</button>
+            </li>
+          </ul>
+        </div><!-- //title_header -->
+
+        <div class="swiper">
+          <div class="swiper-wrapper">
+          </div>
+          <ul class="paging_area type_1"></ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/list.js"></script>
+</body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126963275-35"></script>
+<script>
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-126963275-35');
+
+	//gtag 클릭 이벤트 리스너 등록
+	var trackClickLink = function(category, label) {
+		gtag('event', 'click', {
+			'event_category' : category,
+			'event_label' : label
+		});
+	}
+
+</script>
+
+</html>

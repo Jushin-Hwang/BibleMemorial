@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="kr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta property="og:title" content="톨레레게 성경암송게임" />
+    <meta property="og:description" content="성경을 게임하며 암송하라!" />
+    <meta property="og:image" content="./assets/images/img_meta_thumb.jpg" />
+    <meta property="og:image:width" content="972" />
+    <meta property="og:image:height" content="511" />
+    <title>유스워십 성경암송게임</title>
+
+
+    <!-- 기본 셋팅 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+    <script src="assets/js/library/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/library/jquery-ui.min.js"></script>
+</head>
+
+<body>
+<script>
+	var window_h = $(window).height();
+	var window_w = $(window).width();
+	//alert("width : " + window_w + " // height : " + window_h);
+
+	// 익스플로러 체크
+	var agent = navigator.userAgent.toLowerCase();
+	if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+		alert('이 게임은 Internet Explorer에서는 지원하지 않습니다.\n다른 웹 브라우저 사용을 권장 드립니다.');
+		window.close();
+	}
+</script>
+    <div class="wrap">
+           <div id="container" class="main_container">
+           	<div class="inner">
+                <h1 class="game_logo"><img src="./assets/images/h1_logo.png" alt="유스워십 성경 암송 게임">유스워십 성경암송게임</h1>
+                <img src="./assets/images/img_main.gif" alt="성경을 집어 들고 읽어라! 성경을 게임하며  암송하라!" class="main_img">
+                <ul class="game_list">
+                    <li class="game_item">
+	                    <a href="list.html?type=order" title="페이지 이동" onclick="trackClickLink('메인', '순서 맞추기 게임 버튼');"><img src="./assets/images/btn_main_01.png" alt="순서 맞추기 게임 "></a>
+	                </li>
+                </ul>
+           	</div>
+           </div>
+
+    </div>
+
+</body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126963275-35"></script>
+<script>
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-126963275-35');
+
+	//gtag 클릭 이벤트 리스너 등록
+	var trackClickLink = function(category, label) {
+		gtag('event', 'click', {
+			'event_category' : category,
+			'event_label' : label
+		});
+	}
+
+</script>
+
+</html>
